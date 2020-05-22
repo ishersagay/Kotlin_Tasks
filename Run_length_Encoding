@@ -1,0 +1,23 @@
+fun main () {
+
+    val strUser = readLine()!!.toLowerCase()
+    var iMatch : Int = 0
+    var chrMatch : Char = strUser[0]
+
+    for (char in strUser+1) {
+
+        if (char == chrMatch) {
+
+            iMatch += 1
+        }else {
+            print("$chrMatch$iMatch")
+            chrMatch = char
+            iMatch = 1
+
+        }
+
+
+    }
+
+
+}
