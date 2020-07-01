@@ -1,0 +1,34 @@
+fun main () {
+
+    val keyWords = listOf<String>("plus", "minus",
+        "divided by", "multiplied by", "what is")
+
+    val userInput : String? = readLine()
+    if (userInput != null) {
+        val rx = Regex("\\b(?:${keyWords.joinToString(separator = "|")})\\b")
+        val result = keyWords
+        if (rx.containsMatchIn(userInput)) {
+            calc(userInput)
+        }
+        else{
+            print("You haven't entered the right question")
+        }
+    }
+
+}
+
+fun calc(userInput: String) {
+    val num1 : Int  = userInput[8].toString().toInt()
+    val num2 = userInput.last().toString().toInt()
+
+    if (userInput.contains("plus")){
+        println("The answer is ${num1+num2}")
+    }else if (userInput.contains("mnius")){
+        println("The answer is ${num1 - num2}")
+    }else if (userInput.contains("multiplied by")){
+        println("The answer is ${num1 * num2}")
+    }else if (userInput.contains("divided by")){
+        println("The answer is ${num1 / num2}")
+    }
+
+}
