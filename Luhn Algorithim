@@ -1,0 +1,36 @@
+/**
+ * Luhn Algorithim
+ * Date Saturday 26th December
+ * https://exercism.io/tracks/kotlin/exercises/luhn/solutions/b507e01f16e04938b2f72d0261adc717
+ */
+import java.util.Scanner
+
+fun main() {
+    val keybaord = Scanner(System.`in`)
+    var digit : Int = 0
+
+    print("Enter in your credit card number: ")
+    val creditNumber : String = keybaord.nextLine()
+
+    val checkNum : IntArray = creditNumber.replace(" ","").map { it.toString().toInt() }.toIntArray()
+
+    for (x in  checkNum.indices step 2){
+
+        digit = checkNum[x] * 2
+
+        if (digit > 9){
+            digit -= 9
+        }
+        checkNum[x] = digit
+    }
+
+    val sum : Int = checkNum.sum()
+    if (sum % 10 == 0){
+        println("Number is valid")
+    }else{
+        println("Number is Invalid")
+    }
+
+}
+//4539 1488 0343 6467 <<-- Correct Test Data
+//8273 1232 7352 0569 <<-- Incorrect Test Data
