@@ -1,0 +1,29 @@
+/**
+ * Triangle
+ * Date Monday 28th December
+ * https://exercism.io/tracks/kotlin/exercises/triangle/solutions/197b0732f9d14e30b0b8764913a6ba94
+ */
+import java.util.Scanner
+
+fun main() {
+
+    val keyboard = Scanner(System.`in`)
+
+    println("Enter in three lengths of a triangle")
+    print("First side: ")
+    val firstSide : Int = keyboard.nextInt()
+    print("Second side: ")
+    val secondSide : Int = keyboard.nextInt()
+    print("Third side: ")
+    val thirdSide : Int = keyboard.nextInt()
+
+    if (firstSide == secondSide && firstSide == thirdSide ){
+        print("Equilatrial triangle")
+    }else if(firstSide == secondSide || firstSide == thirdSide || secondSide == thirdSide){
+        print("Isosceles triangle")
+    }else{
+        print("Scalene triangle")
+    }
+   
+
+}
