@@ -1,0 +1,20 @@
+/**
+ * Grains
+ * Date Sunday 4th January
+ * https://exercism.io/tracks/kotlin/exercises/grains/solutions/d6d85ff01e214af6835ffd65c7ceafd2
+ */
+
+import java.util.Scanner
+
+fun main() {
+
+    val szKeyboard = Scanner(System.`in`)
+
+    val grains = (1..64).toList()
+    val sum : Int = grains.sum()
+
+    print("Which square would you like to look at?: ")
+    val find : Int = szKeyboard.nextInt()
+    println(grains[find-1])
+    println("The sum is $sum")
+}
